@@ -1,1 +1,2 @@
 # CV
+I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute to frontend and database related development with the intention of enhancing user experience.
