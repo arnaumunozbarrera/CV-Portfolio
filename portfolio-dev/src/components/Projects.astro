@@ -1,0 +1,156 @@
+---
+import GitHub from "./icons/Github.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import CSS from "./icons/CSS.astro"
+import PHP from "./icons/PHP.astro"
+import HTML from "./icons/HTML.astro"
+import JAVA from "./icons/JAVA.astro"
+import TESTING from "./icons/TESTING.astro"
+import ORACLE from "./icons/ORACLE.astro"
+import MONGODB from "./icons/MONGODB.astro"
+import PYTHON from "./icons/PYTHON.astro"
+
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-[#E1811A] text-black",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-[#fff]",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-500 text-black",
+    icon: JavaScript,
+  },
+    PHP: {
+    name: "PHP",
+    class: "bg-[#6826E1] text-[#fff]",
+    icon: PHP,
+  },
+  JAVA: {
+    name: "JAVA",
+    class: "bg-[#D95D00] text-black",
+    icon: JAVA,
+  },
+  TESTING: {
+    name: "TESTING",
+    class: "bg-[#1f6764] text-[#fff]",
+    icon: TESTING,
+  },
+  ORACLE: {
+    name: "ORACLE",
+    class: "bg-[#D95D00] text-[#fff]",
+    icon: ORACLE,
+  },
+  MONGODB: {
+    name: "MONGODB",
+    class: "bg-green-900 text-[#fff]",
+    icon: MONGODB,
+  },
+  PYTHON: {
+    name: "PYTHON",
+    class: "bg-[#045071] text-[#fff]",
+    icon: PYTHON,
+  },
+}
+const PROJECTS = [
+  {
+    title: "Eco Cars - An e-commerce for ecologic cars",
+    description:
+      "E-commerce for ecologic cars developed from scratch with pure HTML, CSS, Javascript and PHP following the MVC.",
+    link: "https://tdiw-n7.deic-docencia.uab.cat/index.php",
+    github: "https://github.com/arnaumunozbarrera/Ecommerce-Website-Project.git",
+    image: "../e-commerce.png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.PHP],
+  },
+  {
+    title: "Battleship - Testing a classic game",
+    description:
+      "A classic game developed with Java, following the MVC to test the logic of the game.",
+    github: "https://github.com/arnaumunozbarrera/Testing-Project.git",
+    image: "../battleship.png",
+    tags: [TAGS.JAVA, TAGS.TESTING],
+  },
+  {
+    title: "Media Markt - Automatic testing of a website",
+    description:
+      "Automatic testing of the Media Markt website using Selenium and JUnit.",
+    github: "https://github.com/arnaumunozbarrera/UI-Testing-Project.git",
+    image: "../media-markt.png",
+    tags: [TAGS.JAVA, TAGS.TESTING],
+  },
+  {
+    title: "Massiva Data Consult Optimization & Non relational Distributed Databases",
+    description:
+      "Processing massiva data imports in Oracle using Python, managing them and evaluate the impact of indexes on the execution of queries. Also, the implementation of a non-relational distributed database using MongoDB to build a distributed system, also, create views and analyze query performance with execution plans.",
+    github: "https://github.com/arnaumunozbarrera/Massive-Data-Consult-Optimization-Project.git",
+    github2: "https://github.com/arnaumunozbarrera/Non-relational-Distributed-DBs-Project.git",
+    image: "../ReplicasetSharding.png",
+    tags: [TAGS.ORACLE, TAGS.MONGODB, TAGS.PYTHON],
+  },
+ 
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github, github2 }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-0.4 px-3 items-center `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code   
+            </LinkButton>
+          )}
+          {github2 && (
+            <LinkButton href={github2}>
+              <GitHub class="size-6" />
+              Code   
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
