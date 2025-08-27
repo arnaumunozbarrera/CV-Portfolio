@@ -22,20 +22,20 @@ const EmailForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    console.log("Form data: ", 
-        process.env.REACT_APP_EMAIL_SERVICE_ID,
-        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
-        formData,
-        process.env.REACT_APP_EMAIL_SENDER_PUBLIC_KEY
-    )
+    // setStatus("Sending...");
+    // console.log("Form data: ", 
+    //     "service_ma19tlt",
+    //     "template_xmk7yql",
+    //     formData,
+    //     "xF5fJe5Nemyr4QsH_"
+    // )
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAIL_SERVICE_ID,
-        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+        "service_ma19tlt",
+        "template_xmk7yql",
         formData,
-        process.env.REACT_APP_EMAIL_SENDER_PUBLIC_KEY
+        "xF5fJe5Nemyr4QsH_"
       )
       .then(
         () => {
