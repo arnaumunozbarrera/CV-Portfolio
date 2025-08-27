@@ -1,0 +1,212 @@
+:root {
+  --color-2: #7928ca;
+  --color-4: #00f6ff;
+}
+
+.terminal-mac {
+    box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.35);
+}
+
+.contact-modal {
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.35);
+}
+
+.top-panel-buttons {
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.35);
+}
+
+.skills-feature-modals {
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.35);
+}
+
+.neon-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.neon-line {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 4px;
+  height: 200px;
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+              0 0 20px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.4);
+  animation: moveFade 3s linear infinite;
+  transform: translateX(-50%);
+}
+
+.neon-line-y {
+  position: absolute;
+  bottom: 0%;
+  left: 26.5%;
+  width: 4px;
+  height: 200px;
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+              0 0 20px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.4);
+  animation: moveFadeY 3s linear infinite;
+  transform: translateX(-50%);
+}
+
+.neon-line-x {
+  position: absolute;
+  bottom: 52%;
+  left: 56.5%;
+  width: 200px;
+  height: 4px;
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+              0 0 20px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.4);
+  animation: moveFadeX 3s linear infinite;
+  animation-delay: 1.5s;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.neon-line-x2 {
+  position: absolute;
+  bottom: 25%;
+  left: 6.5%;
+  width: 200px;
+  height: 4px;
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+              0 0 20px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.4);
+  animation: moveFadeX2 3s linear infinite;
+  animation-delay: 1.5s;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+  pointer-events: none;
+  animation: driftDown 1s linear forwards infinite;
+}
+
+@keyframes moveFade {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 45%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveFadeY {
+  0% {
+    bottom: 15%;
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveFadeX {
+  0% {
+    opacity: 0;
+    left: 56.5%;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    left: 75%;
+  }
+}
+
+@keyframes moveFadeX2 {
+  0% {
+    opacity: 0;
+    left: 45%;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    left: 32%;
+  }
+}
+
+@keyframes driftDown {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.rainbow-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.rainbow-button {
+  position: relative;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(#121213, #121213),
+              linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),
+              linear-gradient(90deg, var(--color-4), var(--color-2));
+  background-clip: padding-box, border-box, border-box;
+  background-origin: border-box;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.rainbow-button::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  width: 60%;
+  height: 20%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--color-1), var(--color-5), var(--color-3), var(--color-4), var(--color-2));
+  filter: blur(0.75rem);
+  z-index: -1;
+  animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}

@@ -1,0 +1,8 @@
+.div-background {
+    /* background: #4bb0bf;
+    background: -webkit-linear-gradient(90deg, rgba(75, 176, 191, 1) 0%, rgba(61, 129, 179, 1) 41%, rgba(80, 102, 173, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(75, 176, 191, 1) 0%, rgba(61, 129, 179, 1) 41%, rgba(80, 102, 173, 1) 100%);
+    background: linear-gradient(90deg, rgba(75, 176, 191, 1) 0%, rgba(61, 129, 179, 1) 41%, rgba(80, 102, 173, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4BB0BF", endColorstr="#5066AD", GradientType=1); */
+    background-image: linear-gradient(to right top, #e36680, #dc6a9b, #cc72b3, #b67cc7, #9a87d5, #908bd7, #858ed8, #7b91d8, #848fd4, #8c8dcf, #938cca, #998ac5);
+}
