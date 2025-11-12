@@ -1,0 +1,18 @@
+<svg width="664" height="243" viewBox="0 0 764 243" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sideBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6EC3FF"/>
+      <stop offset="0.5" stop-color="#CDEBFF"/>
+      <stop offset="1" stop-color="#6EC3FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="36" y="16" width="632" height="211" rx="12" fill="#121214" stroke="#1f1f22"/>
+  <rect x="56" y="36" width="14" height="171" rx="7" fill="#5ab0ff" opacity="0.25"/>
+  <rect x="60" y="36" width="10" height="171" rx="5" fill="url(#sideBar)"/>
+
+  <text x="96" y="68" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#a5d8ff">UAB Hackaton Winner</text>
+  <text x="96" y="102" font-family="Inter, Arial, sans-serif" font-size="20" fill="#c9c9ce">November 2025 | Grupo Caja Ingenieros Challenge</text>
+  <image href="arnaumunozbarrera\assets\uab_the_hack_logo.jpg" alt="UABtheHack logo" x="570" y="142" width="60" height="60"/>
+  <image href="arnaumunozbarrera\assets\grupo_caja_de_ingenieros_logo.jpg" alt="Grupo Caja Ingenieros logo" x="500" y="142" width="60" height="60"/>
+  <text x="96" y="192" font-family="Inter, Arial, sans-serif" font-size="18" fill="#ffffff">Arnau Muñoz Barrera</text>
+</svg>
