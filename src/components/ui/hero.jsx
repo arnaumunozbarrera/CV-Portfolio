@@ -47,7 +47,7 @@ export const TerminalComponent = (props) => {
                     .catch((err) => {
                         console.error("Failed to load title.txt", err);
                         setWelcomeMessage(`Arnau Muñoz Barrera
-                            Full Stack Engineer`);
+                            Backend Engineer`);
                     });
                 }
             });
@@ -86,7 +86,7 @@ export const TerminalComponent = (props) => {
             .catch((err) => {
                 console.error("Failed to load title.txt", err);
                 setWelcomeMessage(`Arnau Muñoz Barrera
-                    Full Stack Engineer`);
+                    Backend Engineer`);
             });
     }, []);
 
@@ -159,7 +159,7 @@ $ reload: Reload website
                     break;
                 case 'sections -about':
                     setWelcomeMessage("");
-                    response = "I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute to frontend and backend related development with the intention of enhancing user experience & improve system performance. \nBy the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in software development";
+                    response = "I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute to backend related development with the intention of enhancing user experience & improve system performance. \nBy the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in software development";
                     break;
                 default:
                     setWelcomeMessage("");
@@ -183,7 +183,7 @@ $ reload: Reload website
 
                 <div className='w-full flex flex-row items-center justify-center align-middle gap-2 '>
                     <FolderClosed size={12} color={"gray"} />
-                    <div className=' text-gray-300 text-xs pb-1'> arnaumunozbarrera | Computer Engineer</div>
+                    <div className=' text-gray-300 text-xs pb-1'>arnaumunozbarrera | Computer Engineer</div>
                 </div>
 
                 <div className='flex flex-row items-center justify-end px-1 gap-3'>
@@ -615,7 +615,7 @@ export default function Hero(props) {
                                     </span>
                                     <span>
                                         Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences.
-                                        I am eager to contribute to <span className='text-[#ffbe93]'> frontend and backend related development </span> with the intention of enhancing user experience & improve system performance.
+                                        I am eager to contribute to <span className='text-[#ffbe93]'> backend related development </span> with the intention of enhancing user experience & improve system performance.
                                     </span>
                                     <span className='mt-6 '>
                                         By the time I complete my degree,<span className='text-[#eed920]'> I will be looking forward to enrolling in a Master's program </span>  to further advance my expertise in software development.
