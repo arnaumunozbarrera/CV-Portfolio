@@ -131,7 +131,6 @@ $ reload: Reload website
                     setWelcomeMessage("");
                     response = `Contact Information:
 - Email: arnaumunozbarrera@gmail.com
-- Phone: +34 665 01 80 91
 - LinkedIn: https://www.linkedin.com/in/arnau-munoz-barrera
 - Github: https://github.com/arnaumunozbarrera
                                                            `;
@@ -159,7 +158,7 @@ $ reload: Reload website
                     break;
                 case 'sections -about':
                     setWelcomeMessage("");
-                    response = "I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute to backend related development with the intention of enhancing user experience & improve system performance. \nBy the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in software development";
+                    response = "I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance. \n\nBy the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in Data Science development.";
                     break;
                 default:
                     setWelcomeMessage("");
@@ -203,7 +202,7 @@ export default function Hero(props) {
     const [terminalState, setTerminalState] = useState(true);
     const [contactModalOpen, setContactModalOpen] = useState(false);
     const [appearClose, setAppearClose] = useState(false);
-    const [spotifyModalOpen, setSpotifyModalOpen] = useState(false);
+    // const [spotifyModalOpen, setSpotifyModalOpen] = useState(false);
     const [spotifyState, setSpotifyState] = useState(false);
     const [disabledTerminal, setDisabledTerminal] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
@@ -254,7 +253,7 @@ export default function Hero(props) {
         setActivePreview("");
         setFeatureModal(feature);
         setDisabledTerminal(true);
-        setSpotifyModalOpen(false);
+        // setSpotifyModalOpen(false);
         setContactModalOpen(false);
     }
 
@@ -267,7 +266,7 @@ export default function Hero(props) {
     };
 
     const toggleShowCV = () => {
-        setSpotifyModalOpen(false);
+        // setSpotifyModalOpen(false);
         setContactModalOpen(false);
         setShowCV(!showCV);
     };
@@ -281,18 +280,18 @@ export default function Hero(props) {
     }
 
     const toggleContactModal = () => {
-        if(!contactModalOpen) {
-            setSpotifyModalOpen(false);
-        }
+        // if(!contactModalOpen) {
+        //     setSpotifyModalOpen(false);
+        // }
         setContactModalOpen(!contactModalOpen);
     };
 
-    const toggleSpotifyModal = () => {
-        if(!spotifyModalOpen) {
-            setContactModalOpen(false);
-        }
-        setSpotifyModalOpen(!spotifyModalOpen);
-    };
+    // const toggleSpotifyModal = () => {
+    //     if(!spotifyModalOpen) {
+    //         setContactModalOpen(false);
+    //     }
+    //     setSpotifyModalOpen(!spotifyModalOpen);
+    // };
 
     const toggleSpotifyState = () => {
         if (!audioRef.current) return;
@@ -611,14 +610,14 @@ export default function Hero(props) {
                             <div className='font-normal flex flex-row  text-white text-sm lg:text-lg xl:text-xl'>
                                 <div className='flex flex-col gap-4 text-justify px-2 py-5'>
                                     <span>
-                                        I am a <span className='text-[#ffbe93]'>Computer Engineering </span>student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. 
+                                        I am a <span className='text-[#ffbe93]'>Computer Engineering </span> student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences.
                                     </span>
                                     <span>
-                                        Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences.
-                                        I am eager to contribute to <span className='text-[#ffbe93]'> backend related development </span> with the intention of enhancing user experience & improve system performance.
+                            
+                                        <span className='text-[#ffbe93]'> I am eager to contribute Data Analytics related development </span> with the intention of enhancing user experience & improve system performance.
                                     </span>
                                     <span className='mt-6 '>
-                                        By the time I complete my degree,<span className='text-[#eed920]'> I will be looking forward to enrolling in a Master's program </span>  to further advance my expertise in software development.
+                                        By the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in,<span className='text-[#eed920]'> Data Science </span> development.
                                     </span>
                                 </div>
 
@@ -629,7 +628,7 @@ export default function Hero(props) {
                 </div>
             )}
 
-            { spotifyModalOpen &&  (
+            {/* { spotifyModalOpen &&  (
                 <motion.div
                 initial={{ opacity: 0, y: 0 }}  
                 animate={{ opacity: 1, y: 0 }}     
@@ -696,7 +695,7 @@ export default function Hero(props) {
                         </div>
                     </div>
                 </motion.div>
-            )}
+            )} */}
 
             <div className={`top-panel-buttons flex flex-col w-[140px] h-auto pb-4 pt-2 top-48 right-10 z-1 gap-4 text-gray-400  text-[10px] bg-[#36343d] absolute items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}>
                 <div className='grid grid-cols-2 grid-rows-2 items-center justify-center gap-x-4 gap-y-6 py-2'>
@@ -760,7 +759,7 @@ export default function Hero(props) {
 
             <div className='absolute bottom-2 w-full flex flex-row items-center justify-center align-center gap-1 min-[400px]:gap-4'>
 
-                { !disabledTerminal ? (
+                {/* { !disabledTerminal ? (
                     <button className={`top-panel-buttons w-[60px] h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  onClick={toggleSpotifyModal}>
                         <div className='ml-[14px] md:ml-[18px]'>
                             <Music size={20}/>
@@ -772,7 +771,7 @@ export default function Hero(props) {
                             <Music size={20}/>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 { !disabledTerminal ? (
                     <button className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  onClick={toggleContactModal}>
