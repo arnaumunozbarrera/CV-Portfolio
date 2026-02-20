@@ -154,7 +154,7 @@ $ reload: Reload website
                     break;
                 case 'sections -certifications':
                     setWelcomeMessage("");
-                    response = '· Introduction to Machine Learning - McKinsey & Company\n· English Certificate C1 - Cambridge (2024)\n· The McKinsey Way - McKinsey & Company (2025)';
+                    response = '· Intermediate to Machine Learning - McKinsey & Company\n· English Certificate C1 - Cambridge (2024)\n· The McKinsey Way - McKinsey & Company (2025)';
                     break;
                 case 'sections -about':
                     setWelcomeMessage("");
@@ -523,8 +523,8 @@ export default function Hero(props) {
                                     </div>
                                 </div>
                                 <div className="row-span-2 row-start-2">
-                                    <button onClick={() => renderCertificateFullScreen("IntroToML.png")} className="relative group max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] rounded-lg overflow-hidden">
-                                        <img src={require("../../assets/certificates/IntroToML.png")} alt="" className='max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] object-cover object-center rounded-lg ' />
+                                    <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] rounded-lg overflow-hidden">
+                                        <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] object-cover object-center rounded-lg ' />
                                         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-lg font-semibold">
                                             View on full screen
                                         </div>  
@@ -555,8 +555,8 @@ export default function Hero(props) {
                                         Programming Certificates & Degrees
                                         </div>
                                     </div>
-                                    <button onClick={() => renderCertificateFullScreen("IntroToML.png")} className="relative group max-h-[7rem] rounded-lg overflow-hidden">
-                                        <img src={require("../../assets/certificates/IntroToML.png")} alt="" className='max-h-[7rem] h-full w-auto rounded-lg'/>
+                                    <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[7rem] rounded-lg overflow-hidden">
+                                        <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[7rem] h-full w-auto rounded-lg'/>
                                         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-sm font-semibold">
                                             View on full screen
                                         </div>  
