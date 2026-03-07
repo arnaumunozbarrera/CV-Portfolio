@@ -142,7 +142,7 @@ $ reload: Reload website
                     break;
                 case 'sections -experience':
                     setWelcomeMessage("");
-                    response = '· UAB - UNIVERSITY (2022 - 2026): Computer Engineering Degree\n· Looking to Collaborate In Open Source Projects (2025 - Current)\n· Energiot | Computer Engineer (Feb 2025 - June 2025): Full Stack Developer\n· Energiot | Computer Engineer (June 2025 - Current)';
+                    response = '· UAB - UNIVERSITY (2022 - 2026): Computer Engineering Degree\n· Looking to Collaborate In Open Source Projects (2025 - Current)\n· Energiot | Computer Engineer (Feb 2025 - June 2025): Full Stack Developer\n· Energiot | Computer Engineer (June 2025 - May 2026): Full Stack Developer';
                     break;
                 case 'sections -projects':
                     setWelcomeMessage("");
@@ -442,7 +442,7 @@ export default function Hero(props) {
                                     </p>
                                 </GlowCard >
                                     <p className=''>
-                                    June 2025 - Current
+                                    June 2025 - May 2026
                                 </p>
                             </motion.div>
                             <div className="hidden xl:block neon-line-x"></div>
