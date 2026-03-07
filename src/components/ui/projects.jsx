@@ -12,7 +12,7 @@ const features = [
   {
     Icon: DatabaseZap,
     name: "Aural",
-    description: "React Native | Node.js | MongoDB",
+    description: "REACT | NODE.JS | MONGODB",
     href: "https://github.com/arnaumunozbarrera/aural-back.git",
     href2: "https://github.com/arnaumunozbarrera/aural-client.git",
     cta: "Learn more",
@@ -22,13 +22,13 @@ const features = [
   },
   {
     Icon: GlobeIcon,
-    name: "E-commerce Website",
-    description: "HTML | CSS | JS | PHP",
-    href: "https://github.com/arnaumunozbarrera/Ecommerce-Website-Project.git",
+    name: "ML Car predictions",
+    description: "MACHINE LEARNING | PYTHON",
+    href: "https://github.com/arnaumunozbarrera/ML-Model-Car-Prices.git",
     cta: "Learn more",
-    background: <img className="absolute -right-0 -top-0 opacity-100 w-full h-auto" src={require("../../assets/projects/Ecommerce-Website-Project.png")}/>,
+    background: <img className="absolute -right-0 -top-0 opacity-100 w-full h-auto " src={require("../../assets/projects/ML-Car-Project.png")}/>,
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-    report: "https://deepwiki.com/arnaumunozbarrera/Ecommerce-Website-Project"
+    report: "https://github.com/arnaumunozbarrera/ML-Model-Car-Prices/blob/5b20d49645001b5c873edf4ab2f0f29353b373f7/Kaggle.ipynb"
 
   },
   {
@@ -54,14 +54,13 @@ const features = [
   },
   {
     Icon: ShieldCheck,
-    name: "Testing Projects",
-    description: "JAVA | JUNIT | MOCKITO | JENKINS  ",
-    href: "https://github.com/arnaumunozbarrera/Testing-Project.git",
-    href2: "https://github.com/arnaumunozbarrera/UI-Testing-Project.git",
+    name: "ML Titanic",
+    description: "MACHINE LEARNING | PYTHON",
+    href: "https://github.com/arnaumunozbarrera/ML-Model-Titanic.git",
     cta: "Learn more",
-    background: <div className="flex flex-col gap-0"> <img className="absolute -right-0 -top-0 opacity-100 " src={require("../../assets/projects/UI-Testing-Project.png")}/> <img className="absolute -right-0 top-20 opacity-100 " src={require("../../assets/projects/Testing-Project.png")}/></div> ,
+    background: <div className="flex flex-col gap-0"> <img className="absolute -right-0 -top-0 opacity-100 " src={require("../../assets/projects/ML-Titanic-Project.png")}/></div> ,
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-    report: "https://deepwiki.com/arnaumunozbarrera/Testing-Project"
+    report: "https://github.com/arnaumunozbarrera/ML-Model-Titanic/blob/145ce5a85b33b180fe3d8894dfd6c070c610a811/APC_Practica_1_2025.ipynb/Practica_1_2025.ipynb"
   },
 ];
 
