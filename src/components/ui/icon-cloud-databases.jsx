@@ -72,35 +72,35 @@ export function IconCloudDatabases() {
           <Icons.oracle key="oracle" />,
           <Icons.mongodb key="mongodb" />,
           <Icons.postgresql key="postgresql" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
 
           // 2
           <Icons.oracle key="oracle" />,
           <Icons.mongodb key="mongodb" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
           <Icons.postgresql key="postgresql" />,
 
           // 3
           <Icons.oracle key="oracle" />,
           <Icons.postgresql key="postgresql" />,
           <Icons.mongodb key="mongodb" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
 
           // 4
           <Icons.oracle key="oracle" />,
           <Icons.postgresql key="postgresql" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
           <Icons.mongodb key="mongodb" />,
 
           // 5
           <Icons.oracle key="oracle" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
           <Icons.mongodb key="mongodb" />,
           <Icons.postgresql key="postgresql" />,
 
           // 6
           <Icons.oracle key="oracle" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
           <Icons.postgresql key="postgresql" />,
           <Icons.mongodb key="mongodb" />,
 
@@ -108,12 +108,17 @@ export function IconCloudDatabases() {
           <Icons.mongodb key="mongodb" />,
           <Icons.oracle key="oracle" />,
           <Icons.postgresql key="postgresql" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
 
           // 8
           <Icons.mongodb key="mongodb" />,
           <Icons.oracle key="oracle" />,
-          <Icons.virtualbox key="virtualbox" />,
+          // <Icons.virtualbox key="virtualbox" />,
+          <Icons.postgresql key="postgresql" />,
+
+          // 9
+          <Icons.mongodb key="mongodb" />,
+          <Icons.oracle key="oracle" />,
           <Icons.postgresql key="postgresql" />,
         ]}
       />

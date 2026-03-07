@@ -55,45 +55,59 @@ export function IconCloudLanguages() {
       <IconCloud
         icons={[
           // 1
-          <Icons.cplusplus key="cplusplus" />,
+          // <Icons.cplusplus key="cplusplus" />,
           <Icons.python key="python" />,
           <Icons.javascript key="javascript" />,
-          <Icons.php key="php" />,
-          <Icons.java key="java" />,
+          // <Icons.php key="php" />,
+          // <Icons.java key="java" />,
           <Icons.react key="react" />,
 
           // 2
-          <Icons.cplusplus key="cplusplus" />,
+          // <Icons.cplusplus key="cplusplus" />,
           <Icons.python key="python" />,
           <Icons.javascript key="javascript" />,
-          <Icons.php key="php" />,
+          // <Icons.php key="php" />,
           <Icons.react key="react" />,
-          <Icons.java key="java" />,
+          // <Icons.java key="java" />,
 
           // 3
-          <Icons.cplusplus key="cplusplus" />,
+          // <Icons.cplusplus key="cplusplus" />,
           <Icons.python key="python" />,
           <Icons.javascript key="javascript" />,
-          <Icons.java key="java" />,
-          <Icons.php key="php" />,
+          // <Icons.java key="java" />,
+          // <Icons.php key="php" />,
           <Icons.react key="react" />,
 
           // 4
-          <Icons.cplusplus key="cplusplus" />,
+          // <Icons.cplusplus key="cplusplus" />,
           <Icons.python key="python" />,
           <Icons.javascript key="javascript" />,
-          <Icons.java key="java" />,
+          // <Icons.java key="java" />,
           <Icons.react key="react" />,
-          <Icons.php key="php" />,
+          // <Icons.php key="php" />,
 
           // 5
-          <Icons.cplusplus key="cplusplus" />,
+          // <Icons.cplusplus key="cplusplus" />,
           <Icons.python key="python" />,
           <Icons.javascript key="javascript" />,
           <Icons.react key="react" />,
-          <Icons.php key="php" />,
-          <Icons.java key="java" />,
+          // <Icons.php key="php" />,
+          // <Icons.java key="java" />,
 
+          // 6
+          <Icons.python key="python" />,
+          <Icons.react key="react" />,
+          <Icons.javascript key="javascript" />,
+
+          // 7
+          <Icons.python key="python" />,
+          <Icons.javascript key="javascript" />,
+          <Icons.react key="react" />,
+
+          // 8
+          <Icons.python key="python" />,
+          <Icons.react key="react" />,
+          <Icons.javascript key="javascript" />,
         ]}
       />
     </div>

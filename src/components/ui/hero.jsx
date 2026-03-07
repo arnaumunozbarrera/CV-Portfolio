@@ -150,7 +150,7 @@ $ reload: Reload website
                     break;
                 case 'sections -skills':
                     setWelcomeMessage("");
-                    response = '· Languages: React, JavaScript, Node.js, Python, C++, PHP, Java, React Native\n· Databases | Auth : Supabase, Oracle, MongoDB, PostgreSQL, Prisma, Upstash, Clerk, Virtual Box, Nginx\n· Tools: Git, Asana, Confluence, Slack, Figma, Docker, Bitbucket, Jira';
+                    response = '· Languages: Python, Node.js, React\n· Databases: Oracle, MongoDB, PostgreSQL\n· Tools: Git, Asana, Confluence, Slack, Figma, Docker, Bitbucket, Jira';
                     break;
                 case 'sections -certifications':
                     setWelcomeMessage("");
