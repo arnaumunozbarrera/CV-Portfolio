@@ -154,7 +154,7 @@ $ reload: Reload website
                     break;
                 case 'sections -certifications':
                     setWelcomeMessage("");
-                    response = '· Intermediate to Machine Learning - McKinsey & Company\n· English Certificate C1 - Cambridge (2024)\n· The McKinsey Way - McKinsey & Company (2025)';
+                    response = '· Intermediate to Machine Learning - Kaggle (2026)\n· Intro to Deep Learning - Kaggle (2026)\n· English Certificate C1 - Cambridge (2024)\n· The McKinsey Way - McKinsey & Company (2025)';
                     break;
                 case 'sections -about':
                     setWelcomeMessage("");
@@ -506,7 +506,7 @@ export default function Hero(props) {
 
                     {featureModal === "certifications" && PDFElement === "" && !renderFullScreenPDF && (
                         <div className="w-full h-full flex justify-center items-start ">
-                            <div className="hidden md:grid grid-rows-[4rem_auto_auto] grid-cols-3 mt-2 md:mt-0 px-5 py-10 lg:py-20 md:gap-x-6 w-fit place-items-center ">
+                            <div className="hidden md:grid grid-rows-[3rem_auto_auto] grid-cols-3 mt-2 md:mt-0 px-5 py-10 lg:py-20 md:gap-x-6 w-fit place-items-center ">
                                 <div className="rainbow-button-wrapper ">
                                     <div className="rainbow-button">
                                     Programming Certificates & Degrees
@@ -523,12 +523,20 @@ export default function Hero(props) {
                                     </div>
                                 </div>
                                 <div className="row-span-2 row-start-2">
-                                    <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] rounded-lg overflow-hidden">
-                                        <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] object-cover object-center rounded-lg ' />
-                                        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-lg font-semibold">
-                                            View on full screen
-                                        </div>  
-                                    </button>
+                                    <div className='flex flex-col gap-2 items-center'>
+                                        <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[14rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] rounded-lg overflow-hidden">
+                                            <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] object-cover object-center rounded-lg ' />
+                                            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-lg font-semibold">
+                                                View on full screen
+                                            </div>  
+                                        </button>
+                                        <button onClick={() => renderCertificateFullScreen("IntroToDeepLearning.png")} className="relative group max-h-[14rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] rounded-lg overflow-hidden">
+                                            <img src={require("../../assets/certificates/IntroToDeepLearning.png")} alt="" className='max-h-[15rem] max-w-[15rem] 2xl:max-h-[15rem] 2xl:max-w-[25rem] object-cover object-center rounded-lg ' />
+                                            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-lg font-semibold">
+                                                View on full screen
+                                            </div>  
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className="row-span-2 row-start-2">
                                     <button onClick={() => renderCertificateFullScreen("EnglishCertificate.png")} className="relative group 2xl:max-h-[22rem] 2xl:max-w-[22rem] rounded-lg overflow-hidden">
@@ -555,12 +563,20 @@ export default function Hero(props) {
                                         Programming Certificates & Degrees
                                         </div>
                                     </div>
-                                    <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[7rem] rounded-lg overflow-hidden">
-                                        <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[7rem] h-full w-auto rounded-lg'/>
-                                        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-sm font-semibold">
-                                            View on full screen
-                                        </div>  
-                                    </button>
+                                    <div className='flex flex-row gap-1 items-center mt-2'>
+                                        <button onClick={() => renderCertificateFullScreen("MidToML.png")} className="relative group max-h-[7rem] rounded-lg overflow-hidden">
+                                            <img src={require("../../assets/certificates/MidToML.png")} alt="" className='max-h-[7rem] h-full w-auto rounded-lg'/>
+                                            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-sm font-semibold">
+                                                View on full screen
+                                            </div>  
+                                        </button>
+                                        <button onClick={() => renderCertificateFullScreen("IntroToDeepLearning.png")} className="relative group max-h-[7rem] rounded-lg overflow-hidden">
+                                            <img src={require("../../assets/certificates/IntroToDeepLearning.png")} alt="" className='max-h-[7rem] h-full w-auto rounded-lg'/>
+                                            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-black text-sm font-semibold">
+                                                View on full screen
+                                            </div>  
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className='flex flex-col gap-2 items-center'>
                                     <div className="rainbow-button-wrapper">
