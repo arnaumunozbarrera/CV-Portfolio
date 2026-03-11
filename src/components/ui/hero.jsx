@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Terminal } from 'primereact/terminal';
 import { TerminalService } from 'primereact/terminalservice';
-import { FolderClosed, Sun, Moon, X, CircleUserRound, FileBadge2, Linkedin, Github, Music, Pause, Play, ChevronLeft, ChevronRight, Languages, DatabaseZap, Wrench, FolderGit2, SplinePointer, BookUser, Waypoints, University, CodeXml, FolderCode  } from 'lucide-react';
+import { FolderClosed, Sun, Moon, X, CircleUserRound, FileBadge2, Linkedin, Github, Languages, DatabaseZap, Wrench, FolderGit2, SplinePointer, BookUser, Waypoints, University, CodeXml, FolderCode  } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { IconCloudDatabases } from './icon-cloud-databases';
 import { IconCloudLanguages } from './icon-cloud-languages';
 import { IconCloudTools } from './icon-cloud-tools';
 import { Projects } from './projects';
 import { GlowCard } from "../common/spotlight-card";
+import { Mail } from 'lucide-react';
 
 import PDF from '../common/pdf'
 import gsap from 'gsap';
-import EmailForm from '../common/email-form';
 
 import '../../styles/hero.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -773,7 +773,7 @@ export default function Hero(props) {
             </div> */}
 
 
-            <div className='absolute bottom-2 w-full flex flex-row items-center justify-center align-center gap-1 min-[400px]:gap-4'>
+            <div className='absolute bottom-2 w-full flex flex-row items-center justify-center align-center gap-2 min-[400px]:gap-4'>
 
                 {/* { !disabledTerminal ? (
                     <button className={`top-panel-buttons w-[60px] h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  onClick={toggleSpotifyModal}>
@@ -790,18 +790,28 @@ export default function Hero(props) {
                 )} */}
 
                 { !disabledTerminal ? (
-                    <button className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  onClick={toggleContactModal}>
-                        <div className='flex flex-row items-center justify-center w-full gap-2 text-base mt-0'>
-                            <CircleUserRound size={20}/>
+                    <button className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  >
+                        <a
+                            href="mailto:arnaumunozbarrera@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`top-panel-buttons w-[250px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
+                            >
+                            <Mail size={20} />
                             Connect with me
-                        </div>
+                        </a>
                     </button>
                 ) : (
                     <div className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}>
-                        <span className='text-gray-400 text-[10px] flex flex-row items-center justify-center w-full gap-2 text-base mt-3'>
-                            <CircleUserRound size={20}/>
+                        <a
+                            href="mailto:arnaumunozbarrera@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`top-panel-buttons w-[250px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
+                            >
+                            <Mail size={20} />
                             Connect with me
-                        </span>
+                        </a>
                     </div>
                 )}
 
@@ -874,22 +884,6 @@ export default function Hero(props) {
                     </div>
                 )}
             </div>
-            
-            { contactModalOpen && (
-                // <div className={`contact-modal bg-[#36343d] w-[150px] h-[80px] z-100 absolute bottom-16 left-[30.5%] sm:left-[35.5%] lg:left-[37.5%] xl:left-[42.5%] min-[1400px]:left-[43.5%] min-[1600px]:left-[45.5%] gap-y-2 flex flex-col p-2 rounded-lg border-[1.5px] border-gray-400 border-t-0 border-r-[1.5px] border-l-0 hover:border-[#5376b8] `}> 
-                //     <button className='flex flex-row items-center justify-center w-[98%] text-gray-300 hover:text-[#fff] text-xs font-thin px-1 py-1  rounded-full top-2 border-gray-400 hover:border-[#ce70af] border-[1px] border-solid'>
-                //       <a href="mailto:arnaumunozbarrera@gmail.com" className='flex flex-row items-center justify-center'> <Mails size={14} className='mr-1'/> Send me an email</a>
-                //     </button>
-                // </div>
-                <motion.div
-                initial={{ opacity: 0, y: 0 }}  
-                animate={{ opacity: 1, y: 0 }}     
-                transition={{ duration: 0.5 }}     
-                className=""
-                >
-                 <EmailForm disabledTerminal={disabledTerminal}/>
-                </motion.div>
-            )}
         </div>
     );
 }
