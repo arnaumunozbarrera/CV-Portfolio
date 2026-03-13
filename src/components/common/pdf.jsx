@@ -15,7 +15,7 @@ class PDF extends Component {
 
         return ( 
             // w-[1020px] h-[430px]
-            <div className="pdf-viewer w-[83.5%] h-[90%] max-h-[500px] flex flex-row items-center justify-center absolute z-1000 top-1 ">
+            <div className="pdf-viewer w-[83.5%] h-[90%] max-h-[500px] flex flex-row items-center justify-center absolute z-1000 top-10 md:top-20 ">
                 <object data={url} type="application/pdf"
                 className='w-[100%] h-[100%] rounded-lg'></object>
                 {/* <button className=' top-0 absolute mt-2 mb-2'>

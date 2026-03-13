@@ -810,9 +810,9 @@ export default function Hero(props) {
                             </button>
                         )}
                         
-                        <div className='pdf-display left-0 w-full h-[660px] absolute top-10 z-[10000] flex items-center justify-center flex-col gap-4'>
-                            <PDF className="mt-20" url={require("../../assets/CV.pdf")}/>
-                        </div>
+                        {/* <div className='pdf-display left-0 w-full h-[660px] absolute top-0 mt-10 md:mt-20 z-[10000] flex items-center justify-center flex-col'> */}
+                            <PDF className="pdf-display left-0 w-full h-[660px] absolute  z-[10000] flex items-center justify-center flex-col" url={require("../../assets/CV.pdf")}/>
+                        {/* </div> */}
                     </div>
                 )}
 
