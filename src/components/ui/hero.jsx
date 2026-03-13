@@ -11,7 +11,9 @@ import { GlowCard } from "../common/spotlight-card";
 import { Mail } from 'lucide-react';
 
 import PDF from '../common/pdf'
+import Notepad from '../common/notepad'
 import gsap from 'gsap';
+import NotepadViewer from '../common/notepad-viewer';
 
 import '../../styles/hero.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -174,11 +176,11 @@ $ reload: Reload website
     return (
         <div ref={terminalRef} className={`card flex flex-col items-center justify-center p-2 pb-0 w-full 
         ${!props.terminalState ? "hidden" : ""}`}>
-            {/* <h1 className='text-white text-2xl mb-2'>Welcome to Arnau's Website</h1> */}
-            <div className={`bg-[#36343d] h-[20px] w-full rounded-t-lg flex flex-row px-2 gap-2  items-center ${!props.terminalState ? "hidden" : ""} `}>
+            <div className={`bg-[#36343d] h-[20px] w-full rounded-t-lg flex flex-row px-2 gap-2  items-center 
+                ${!props.terminalState ? "hidden" : ""} `}>
+
                 <button onClick={closeTerminal}> <div className='rounded-full size-2 bg-[#da6e66]'></div> </button>
                 <button onClick={minimizeTerminal}> <div className='rounded-full size-2 bg-[#f5c555]'></div> </button>
-                {/* <button onClick={toggleScreenMode}> <div className='rounded-full size-2 bg-[#69c365]'></div> </button> */}
 
                 <div className='w-full flex flex-row items-center justify-center align-middle gap-2 '>
                     <FolderClosed size={12} color={"gray"} />
@@ -190,23 +192,28 @@ $ reload: Reload website
                 </div>
             </div>
 
-            <Terminal welcomeMessage={welcomeMessage} aria-readonly={readOnlyState} prompt="C:\arnau-dev>" className={`terminal-mac h-[350px] w-full rounded-lg rounded-t-none ${terminalMode === "dark" ? "bg-[#1e1f1f] text-white": "bg-[#cdcbcb] text-black"}  text-xs font-mono whitespace-pre-wrap ${welcomeMessage ? "text-center" : ""}`} 
-            />
-
+            <Terminal welcomeMessage={welcomeMessage} 
+                    aria-readonly={readOnlyState} 
+                    prompt="C:\arnau-dev>" 
+                    className={`terminal-mac h-[350px] w-full rounded-lg rounded-t-none 
+                    ${terminalMode === "dark" ? "bg-[#1e1f1f] text-white": "bg-[#cdcbcb] text-black"}  
+                    text-xs font-mono whitespace-pre-wrap ${welcomeMessage ? "text-center" : ""}`} />
         </div>
     );
 };
 
 export default function Hero(props) {
     const [showCV, setShowCV] = useState(false);
+    const [showExperience, setShowExperience] = useState(false);
+    const [showProjects, setShowProjects] = useState(false);
+    const [showSkills, setShowSkills] = useState(false);
+    const [showDegrees, setShowDegress] = useState(false);
+    const [showNotepad, setShowNotepad] = useState(false);
+
     const [terminalState, setTerminalState] = useState(true);
-    const [contactModalOpen, setContactModalOpen] = useState(false);
+
     const [appearClose, setAppearClose] = useState(false);
-    // const [spotifyModalOpen, setSpotifyModalOpen] = useState(false);
-    const [spotifyState, setSpotifyState] = useState(false);
     const [disabledTerminal, setDisabledTerminal] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
-    const [activePreview, setActivePreview] = useState("");
     const [featureModal, setFeatureModal] = useState("");
     const [endParticles, setEndParticles] = useState(false);
     const [renderFullScreenPDF, setRenderFullScreenPDF] = useState(false);
@@ -250,91 +257,79 @@ export default function Hero(props) {
     }
 
     const toggleFeatureModal = (feature) => {
-        setActivePreview("");
         setFeatureModal(feature);
         setDisabledTerminal(true);
-        // setSpotifyModalOpen(false);
-        setContactModalOpen(false);
     }
 
-    const displayPreview = (id) => {
-        setActivePreview(id);
-    };
-
     const handleTerminalStateChange = (state) => {
-        setTerminalState(state); // estado: true (visible), false (cerrado/minimizado)
+        setTerminalState(state);
     };
 
     const toggleShowCV = () => {
-        // setSpotifyModalOpen(false);
-        setContactModalOpen(false);
         setShowCV(!showCV);
+        setShowExperience(false);
+        setShowProjects(false);
+        setShowSkills(false);
+        setShowDegress(false);
+        setShowNotepad(false);
     };
+
+    const toggleExperience = () => {
+        setShowCV(false);
+        setShowExperience(!showExperience);
+        setShowProjects(false);
+        setShowSkills(false);
+        setShowDegress(false);
+        setShowNotepad(false);
+    }
+
+    const toggleProjects = () => {
+        setShowCV(false);
+        setShowExperience(false);
+        setShowProjects(!showProjects);
+        setShowSkills(false);
+        setShowDegress(false);
+        setShowNotepad(false);
+    }
+
+    const toggleSkills = () => {
+        setShowCV(false);
+        setShowExperience(false);
+        setShowProjects(false);
+        setShowSkills(!showSkills);
+        setShowDegress(false);
+        setShowNotepad(false);
+    }
+
+    const toggleDegrees = () => {
+        setShowCV(false);
+        setShowExperience(false);
+        setShowProjects(false);
+        setShowSkills(false);
+        setShowDegress(!showDegrees);
+        setShowNotepad(false);
+    }
+
+    const toggleAbout = () => {
+        setShowNotepad(!showNotepad);
+        setShowCV(false);
+        setShowExperience(false);
+        setShowProjects(false);
+        setShowSkills(false);
+        setShowDegress(false);
+    }
 
     const toggleTerminal = () => {
         setTerminalState(!terminalState);
     };
 
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    }
-
-    const toggleContactModal = () => {
-        // if(!contactModalOpen) {
-        //     setSpotifyModalOpen(false);
-        // }
-        setContactModalOpen(!contactModalOpen);
-    };
-
-    // const toggleSpotifyModal = () => {
-    //     if(!spotifyModalOpen) {
-    //         setContactModalOpen(false);
-    //     }
-    //     setSpotifyModalOpen(!spotifyModalOpen);
-    // };
-
-    const toggleSpotifyState = () => {
-        if (!audioRef.current) return;
-
-        if (spotifyState) {
-            audioRef.current.pause();
-        } 
-        else {
-            audioRef.current.play();
-        }
-
-        setSpotifyState((prev) => !prev);
-    };
-
     const renderCertificateFullScreen = (url) => {
-        // console.log("Element: ", url);
         setRenderFullScreenPDF(true);
         setPDFElement(url);
     }
 
-    const artists = ["Linkin Park", "Avantasia", "WarCry", "Ghost", "Avenged Sevenfold"];
-    const songs = ["What I've done", "Dying For An Angel", "Luchar y Avanzar", "He Is", "Hail To The King"];
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const audioRef = useRef(null);
-    const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(0);
-
-    const handleSongChange = (movement) => {
-    if (movement === "next") {
-      setCurrentIndex((prev) =>
-        prev + 1 < artists.length ? prev + 1 : 0 // loop back to start
-      );
-    } else if (movement === "previous") {
-      setCurrentIndex((prev) =>
-        prev - 1 >= 0 ? prev - 1 : artists.length - 1 // loop back to last
-      );
-    }
-
-    setSpotifyState(true);
-  };
-
     return (
-        <div> 
+        <div className='flex flex-row '> 
             { !disabledTerminal ? (
                 <button className={`hidden top-panel-buttons w-[60px] h-[50px] top-32 right-[5rem] z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] absolute lg:flex flex-row items-center justify-center align-middle gap-3 rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2 `}  onClick={toggleTerminal}>
                     <div className=''>
@@ -644,170 +639,51 @@ export default function Hero(props) {
                 </div>
             )}
 
-            {/* { spotifyModalOpen &&  (
-                <motion.div
-                initial={{ opacity: 0, y: 0 }}  
-                animate={{ opacity: 1, y: 0 }}     
-                transition={{ duration: 0.5 }}     
-                className=""
-                >
-                    <div className={`spotify-modal spotify-shadow bg-[#36343d] rounder-lg hidden min-[300px]:block w-[200px] h-[260px]  sm:w-[200px] sm:h-[260px] lg:w-[200px] lg:h-[260px] xl:w-[200px] xl:h-[260px] z-100 absolute bottom-8 left-4 sm:left-[10%] md:left-[15%] sm:mb-[5%] md:mb-[5%] mb-[8%] xl:mb-0 lg:left-[5%] xl:ml-[10%] min-[1400px]:ml-[15%] p-2 rounded-lg border-[1.5px] border-gray-400 border-t-0 border-l-0 hover:border-[#5376b8] z-[100000] `}> 
-                        <div className='flex flex-row w-[100%] justify-center items-center'>
-                            <strong className='text-[#fff]'> What I Sound Like </strong>
-                        </div>
-                        <div className='flex flex-col items-center justify-between mt-2 mb-2'>
-
-                            <img src={require(`../../assets/songs/covers/${artists[currentIndex]}.jpg`) } alt={""} className='w-[150px] h-[150px] rounded-lg'/>
-
-                            <audio 
-                                ref={audioRef} 
-                                src={require(`../../assets/songs/audio/${songs[currentIndex]}.mp3`)} 
-                                onLoadedMetadata={(e) => setDuration(e.target.duration)}  
-                                onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)} 
-                                onLoadedData={() => {
-                                    if (spotifyState) {
-                                    audioRef.current.play();
-                                    }
-                                }}
-                            />
-                        </div>
-
-                        <div className='flex flex-col items-center justify-between mt-2 mb-2 text-[#fff] text-xs font-light'>
-                            <div className=''> 
-                                 {artists[currentIndex]} - <span>{songs[currentIndex]}</span>
-                            </div>
-                        </div>
-
-                        <div className="w-full h-[3px] bg-[#fff] rounded-full mt-2 mb-2 relative"
-                            onClick={(e) => {
-                                const rect = e.currentTarget.getBoundingClientRect();
-                                const clickX = e.clientX - rect.left;
-                                const newTime = (clickX / rect.width) * duration;
-                                audioRef.current.currentTime = newTime;
-                            }}>
-                            <div
-                                className="h-full bg-[#ce70af] rounded-full"
-                                style={{ width: `${(currentTime / duration) * 100 || 0}%` }}
-                            ></div>
-                        </div>
-
-
-                        <div className='flex flex-row items-center justify-center gap-2 bottom-0 mt-2'>
-                            <button className='z-1000 text-gray-300 hover:text-[#fff]' onClick={() => handleSongChange("previous")}>
-                                <ChevronLeft size={18}/>
-                            </button>
-                            { spotifyState ? (
-                                <button className='z-1000 text-gray-300 hover:text-[#fff]' onClick={toggleSpotifyState}>
-                                    <Pause size={18}/>
-                                </button>
-                            ) : (
-                                <button className='z-1000 text-gray-300 hover:text-[#fff]' onClick={toggleSpotifyState}>
-                                    <Play size={18}/>
-                                </button>
-                            )}
-                            <button className='z-1000 text-gray-300 hover:text-[#fff]' onClick={() => handleSongChange("next")}>
-                                <ChevronRight size={18}/>
-                            </button>
-                        </div>
-                    </div>
-                </motion.div>
-            )} */}
-
             <div className={`top-panel-buttons flex flex-col w-[140px] h-auto pb-4 pt-2 top-48 right-10 z-1 gap-4 text-gray-400  text-[10px] bg-[#36343d] absolute items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}>
                 <div className='grid grid-cols-2 grid-rows-2 items-center justify-center gap-x-4 gap-y-6 py-2'>
-                    <button className='h-10 w-10 flex flex-col items-center hover:text-[#fff]' onMouseEnter={() => displayPreview("experience")} onMouseLeave={() => setActivePreview("")} onClick={() => toggleFeatureModal("experience")}>
+                    <button className='h-10 w-10 flex flex-col items-center hover:text-[#fff]' onClick={() => toggleFeatureModal("experience")}>
                         <Waypoints size={60} className=''/>
                         <p className='text-xs font-semibold'>Experience</p>
                     </button>
-                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onMouseEnter={() => displayPreview("projects")} onMouseLeave={() => setActivePreview("")} onClick={() => toggleFeatureModal("projects")}>
+                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onClick={() => toggleFeatureModal("projects")}>
                         <FolderGit2 size={60}/>
                         <p className='text-xs font-semibold'>Projects</p>
                     </button>
-                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onMouseEnter={() => displayPreview("skills")} onMouseLeave={() => setActivePreview("")} onClick={() => toggleFeatureModal("skills")}>
+                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onClick={() => toggleFeatureModal("skills")}>
                         <SplinePointer size={60}/>
                         <p className='text-xs font-semibold'>Skills</p>
                     </button>
-                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onMouseEnter={() => displayPreview("certifications")} onMouseLeave={() => setActivePreview("")} onClick={() => toggleFeatureModal("certifications")}>
+                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onClick={() => toggleFeatureModal("certifications")}>
                         <FileBadge2 size={60}/>
                         <p className='text-xs font-semibold'>Degrees</p>
                     </button>
                 </div>
-                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onMouseEnter={() => displayPreview("about")} onMouseLeave={() => setActivePreview("")} onClick={() => toggleFeatureModal("about")}>
+                    <button className='h-10 w-10 flex flex-col items-center justify-center hover:text-[#fff]' onClick={() => toggleFeatureModal("about")}>
                         <BookUser size={60}/>
                         <p className='text-xs font-semibold'>About</p>
                     </button>
-                {/* {activePreview && (
-                    <div className='h-[20px] w-[120px] bg-[#518eff] z-[10000] absolute rounded-sm text-white flex items-center justify-center text-2xs flex-col gap-y-2' onClick={() => toggleFeatureModal(`${activePreview.toLocaleLowerCase()}`)}>
-                        {activePreview.toLocaleUpperCase()}
-                    </div>
-                )} */}
             </div>
 
-            {/* <div
-                className={`top-panel-buttons w-[60px] h-[50px] top-[25.5rem] right-[5rem] z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] absolute flex flex-row items-center justify-center align-middle gap-3 rounded-xl z-[1000] ${
-                    !disabledTerminal
-                    ? "border-gray-300 hover:border-[#518eff]"
-                    : "border-gray-400"
-                } border-b-2 border-r-2`}
-                 onClick={disabledTerminal ? undefined : toggleDarkMode} 
-                >
-                {!disabledTerminal ? (
-                    darkMode ? (
-                    <button>
-                        <Sun size={20} />
-                    </button>
-                    ) : (
-                    <button>
-                        <Moon size={20} />
-                    </button>
-                    )
-                ) : darkMode ? (
-                    <div className="text-gray-400 text-[10px]">
-                    <Sun size={20} />
-                    </div>
-                ) : (
-                    <div className="text-gray-400 text-[10px]">
-                    <Moon size={20} />
-                    </div>
-                )}
-            </div> */}
-
-
             <div className='absolute bottom-2 w-full flex flex-row items-center justify-center align-center gap-2 min-[400px]:gap-4'>
-
-                {/* { !disabledTerminal ? (
-                    <button className={`top-panel-buttons w-[60px] h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  onClick={toggleSpotifyModal}>
-                        <div className='ml-[14px] md:ml-[18px]'>
-                            <Music size={20}/>
-                        </div>
-                    </button>
-                ) : (
-                    <div className={`top-panel-buttons w-[60px] flex-col h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  >
-                        <div className='text-gray-400 text-[10px] mt-3 ml-[14px] sm:ml-[18px] '>
-                            <Music size={20}/>
-                        </div>
-                    </div>
-                )} */}
-
                 { !disabledTerminal ? (
-                    <button className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  >
+                    <button className={`top-panel-buttons w-[180px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}  >
                         <a
                             href="mailto:arnaumunozbarrera@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`top-panel-buttons w-[250px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
+                            className={`top-panel-buttons w-[180px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
                             >
                             <Mail size={20} />
                             Connect with me
                         </a>
                     </button>
                 ) : (
-                    <div className={`top-panel-buttons w-[250px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}>
+                    <div className={`top-panel-buttons w-[180px] flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center align-middle rounded-xl  z-[1000] ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"}  border-b-2 border-r-2`}>
                         <a
                             href="mailto:arnaumunozbarrera@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`top-panel-buttons w-[250px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
+                            className={`top-panel-buttons w-[180px] flex flex-row h-[50px] bottom-2 z-1 text-gray-300 hover:text-[#fff] text-[10px] bg-[#36343d] items-center justify-center rounded-xl z-[1000] gap-2 text-base ${!disabledTerminal ? "border-gray-300 hover:border-[#518eff]" : "border-gray-400"} border-b-2 border-r-2`}
                             >
                             <Mail size={20} />
                             Connect with me
@@ -843,26 +719,89 @@ export default function Hero(props) {
                     </div>
                 )}
             </div>
-            
 
-            <div className={`flex flex-col items-start justify-between mt-[2%] text-[#fff] text-xs font-light `}>
+            <div className={`flex flex-col items-start justify-between mt-[10%] md:mt-[2%] ml-6 text-[#fff] text-sm font-light gap-2`}>
                 { disabledTerminal ? (
-                    <div className={`flex flex-col items-center left-0 ml-6 rounded-lg py-1.5 px-6 z-[1000]`} >
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
                         <img src={require("../../assets/icons/pdf.png")} className='w-8 h-8 mb-1' />
-                        <span className='ml-1'> actual CV</span>
+                        <span> actual CV</span>
                     </div>
                 ) :(
-                    <button className={`flex flex-col items-center left-0 ml-6 hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000]`} onClick={toggleShowCV}>
-                        {/* <BsFiletypePdf size={30} color='black' /> */}
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleShowCV}>
                         <img src={require("../../assets/icons/pdf.png")} className='w-8 h-8 mb-1' />
-                        <span className='ml-1'> actual CV</span>
+                        <span> actual CV</span>
                     </button>
                 )}
-                
 
+                {/* { disabledTerminal ? (
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
+                        <Waypoints size={32} color='#327a28' className='mr-1 mb-1'/>
+                        <span> experience</span>
+                    </div>
+                ) :(
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleExperience}>
+                        <Waypoints size={32} color='#327a28' className='mb-1 mr-1'/>
+                        <span>experience</span>
+                    </button>
+                )}
+
+                { disabledTerminal ? (
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
+                        <FolderGit2 size={34} color='#0031ab' className='ml-1 mb-1'/>
+                        <span> projects</span>
+                    </div>
+                ) :(
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleProjects}>
+                        <FolderGit2 size={34} color='#0031ab' className='ml-1 mb-1'/>
+                        <span> projects</span>
+                    </button>
+                )}
+
+                { disabledTerminal ? (
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
+                        <SplinePointer size={34} color='#f89a6e' className='ml-1 mb-1'/>
+                        <span> skills</span>
+                    </div>
+                ) :(
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleSkills}>
+                        <SplinePointer size={34} color='#f89a6e' className='ml-1 mb-1'/>
+                        <span> skills</span>
+                    </button>
+                )}
+
+                { disabledTerminal ? (
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className='ml-1' 
+                            fill="#e5db1c" viewBox="2 2 20 20" >
+                            <path d="m21.45 8.61-9-4.5a1 1 0 0 0-.89 0l-6 3-3 1.5-1 .5a1 1 0 0 0-.55.89v6h2v-5.38l2 1v3.83c0 2.06 3.12 4.56 7 4.56s7-2.49 7-4.56v-3.83l2.45-1.22c.34-.17.55-.52.55-.89s-.21-.72-.55-.89Zm-15 .29L12 6.12l6.76 3.38L12 12.88 5.24 9.5l1.21-.61ZM17 15.45c0 .76-2.11 2.56-5 2.56s-5-1.79-5-2.56v-2.83l4.55 2.28c.14.07.29.11.45.11s.31-.04.45-.11L17 12.62z"></path>
+                        </svg>
+                        <span > degrees</span>
+                    </div>
+                ) :(
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleDegrees}>
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" className='ml-1'
+                            fill="#e5db1c" viewBox="2 2 20 20" >
+                            <path d="m21.45 8.61-9-4.5a1 1 0 0 0-.89 0l-6 3-3 1.5-1 .5a1 1 0 0 0-.55.89v6h2v-5.38l2 1v3.83c0 2.06 3.12 4.56 7 4.56s7-2.49 7-4.56v-3.83l2.45-1.22c.34-.17.55-.52.55-.89s-.21-.72-.55-.89Zm-15 .29L12 6.12l6.76 3.38L12 12.88 5.24 9.5l1.21-.61ZM17 15.45c0 .76-2.11 2.56-5 2.56s-5-1.79-5-2.56v-2.83l4.55 2.28c.14.07.29.11.45.11s.31-.04.45-.11L17 12.62z"></path>
+                        </svg>
+                        <span> degrees</span>
+                    </button>
+                )}
+
+                { disabledTerminal ? (
+                    <div className={`flex flex-col items-center rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} >
+                        <img src={require("../../assets/icons/notepad.png")} className='w-8 h-8 mb-1 mr-1' />
+                        <span> about</span>
+                    </div>
+                ) :(
+                    <button className={`flex flex-col items-center hover:bg-white hover:bg-opacity-15 rounded-lg py-1.5 px-6 z-[1000] max-w-[100px] min-w-[100px]`} onClick={toggleAbout}>
+                        <img src={require("../../assets/icons/notepad.png")} className='w-8 h-8 mb-1 mr-1' />
+                        <span> about</span>
+                    </button>
+                )} */}
+                
+                
                 { showCV && (
                     <div className=' left-0  w-full h-full absolute top-0 bg-white bg-opacity-20 z-[100000] flex items-center justify-center flex-col gap-4'>
-                        
                         { !appearClose ? (
                             <div className='w-full h-[7%] absolute top-0 opacity-0' onMouseEnter={() => setAppearClose(true)} onMouseLeave={() => setAppearClose(false)}> Close </div>
                         ) : (
@@ -877,9 +816,30 @@ export default function Hero(props) {
                     </div>
                 )}
 
+                {/* {showNotepad && (
+                    <div className=' left-0  w-full h-full absolute top-0 bg-white bg-opacity-20 z-[100000] flex items-center justify-center flex-col gap-4'>
+                        { !appearClose ? (
+                            <div className='w-full h-[7%] absolute top-0 opacity-0' onMouseEnter={() => setAppearClose(true)} onMouseLeave={() => setAppearClose(false)}> Close </div>
+                        ) : (
+                            <button className='bg-[#36343d] text-gray-400 hover:text-[#fff] text-xs px-1 py-1  rounded-full z-[10000] absolute top-2 ' onClick={toggleAbout} onMouseLeave={() => setAppearClose(false)}>
+                                <X size={14} className=''/>
+                            </button>
+                        )}
+                        <NotepadViewer
+                            text={`I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences.
+                            
+I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance. 
+
+By the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in Data Science development.`}
+                            />
+                        
+                    </div>
+                )} */}
+            </div>
+
+            <div className={`flex flex-col items-start justify-between mt-[2%] text-[#fff] text-xs font-light `}>
                 { !disabledTerminal && ( 
                     <div className="terminal-bg hidden lg:flex items-center w-[850px] justify-center ml-[2%] sm:ml-[2%] md:ml-[2%] lg:ml-[2%] xl:ml-[20%] "> 
-                    {/* ml-52 */}
                         <TerminalComponent terminalState={terminalState} onChangeState={handleTerminalStateChange}/>
                     </div>
                 )}
