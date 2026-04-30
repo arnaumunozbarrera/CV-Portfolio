@@ -11,6 +11,7 @@ import {
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import midToML from "../../assets/certificates/MidToML.png";
 import introToDeepLearning from "../../assets/certificates/IntroToDeepLearning.png";
+import DataCleaning from "../../assets/certificates/DataCleaning.png";
 import hackatonBadge from "../../assets/certificates/hackaton_badge.svg";
 import english from "../../assets/certificates/EnglishCertificate.png";
 import McKinsey from "../../assets/certificates/McKinseyProgram.jpeg";
@@ -23,6 +24,7 @@ const sections = [
     items: [
         { name: "Certificate - Intermediate to Machine Learning", type: "Image", modified: "15/03/2026 16:21", src: midToML},
         { name: "Certificate - Intro to Deep Learning", type: "Image", modified: "15/03/2026 16:21", src: introToDeepLearning},
+        { name: "Certificate - Data Cleaning", type: "Image", modified: "30/04/2026 17:24", src: DataCleaning},
         { name: "Certificate - UABTHEHACK", type: "Image", modified: "15/03/2026 16:21", src: hackatonBadge},
     ],
   },
