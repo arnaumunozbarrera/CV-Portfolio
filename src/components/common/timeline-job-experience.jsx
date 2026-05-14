@@ -7,12 +7,19 @@ const timelineSections = [
     title: "Job Experience",
     items: [
       {
-        year: "February 2025 - Present",
+        year: "February 2025 - May 2026",
         title: "Full Stack Developer Intern",
         subtitle: "Energiot Devices SL",
         description:
             "Worked on data-driven IoT platforms, designing scalable data backend systems for efficient ingestion, processing, and visualization of high-frequency sensor data.",
-        },
+      },
+      {
+        year: "May 2026 - Present",
+        title: "Software Engineer",
+        subtitle: "Energiot Devices SL",
+        description:
+          "Worked on scalable IoT and cloud-based platforms, designing backend systems, APIs, and real-time data pipelines for efficient ingestion, processing and data visualization.",
+      },
     ],
   },
   {
@@ -132,21 +139,31 @@ function MobileTimelineTrack({ items = [], annex, showFuture = false }) {
 }
 
 function ExperienceDesktopTrack({ items }) {
-  const item = items?.[0];
-  if (!item) return null;
+  if (!items?.length) return null;
 
   return (
     <div className="relative hidden h-[240px] md:block">
       <div className="absolute left-[8%] right-[8%] top-[58%] h-px bg-white/15" />
 
-      <div className="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2">
-        <div className="absolute -bottom-2 left-1/2 h-12 w-px -translate-x-1/2 bg-white/15" />
-        <div className="absolute left-1/2 top-1/2 z-10 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-[#161616] bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_0_28px_rgba(255,255,255,0.08)]" />
+      {items.map((item, index) => {
+        const positions = ["30%", "70%"];
 
-        <div className="absolute bottom-10 left-1/2 w-[330px] -translate-x-1/2">
-          <TimelineItemCard item={item} />
-        </div>
-      </div>
+        return (
+          <div
+            key={index}
+            className="absolute top-[58%] -translate-x-1/2 -translate-y-1/2"
+            style={{ left: positions[index] }}
+          >
+            <div className="absolute -bottom-2 left-1/2 h-12 w-px -translate-x-1/2 bg-white/15" />
+
+            <div className="absolute left-1/2 top-1/2 z-10 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-[#161616] bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_0_28px_rgba(255,255,255,0.08)]" />
+
+            <div className="absolute bottom-10 left-1/2 w-[330px] -translate-x-1/2">
+              <TimelineItemCard item={item} />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
