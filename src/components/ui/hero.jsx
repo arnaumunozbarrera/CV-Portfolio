@@ -131,7 +131,7 @@ $ reload: Reload website
                     break;
                 case 'current':
                     setWelcomeMessage("");
-                    response = 'I am currently working as a Full Stack Engineer at Energiot, focusing on web development, API services and cloud solutions with React, Node.js and Python for native IoT devices';
+                    response = 'I am currently working as a Software Engineer at Energiot, focusing on design, development, and optimization of scalable IoT and cloud-based platforms for smart grid monitoring and real-time data analytics.';
                     break;
                 case 'contact':
                     setWelcomeMessage("");
@@ -148,7 +148,7 @@ $ reload: Reload website
                     break;
                 case 'sections -experience':
                     setWelcomeMessage("");
-                    response = '· UAB - UNIVERSITY (2022 - 2026): Computer Engineering Degree\n· Looking to Collaborate In Open Source Projects (All time)\n· Energiot | Computer Engineer (Feb 2025 - Current): Full Stack Developer\n· Future: MASTER: Data Science';
+                    response = '· UAB - UNIVERSITY (2022 - 2026): Computer Engineering Degree\n· UPC - MASTERS (2026 - 2028): Computer Engineering Degree\n\n· Looking to Collaborate In Open Source Projects (All time)\n· Energiot | Computer Engineer (Feb 2025 - May 2026): Full Stack Developer\n· Energiot | Computer Engineer (May 2026 - Current): Software Engineer';
                     break;
                 case 'sections -projects':
                     setWelcomeMessage("");
@@ -156,7 +156,7 @@ $ reload: Reload website
                     break;
                 case 'sections -skills':
                     setWelcomeMessage("");
-                    response = '· Languages: Python, Node.js, React, Java, C++\n· Databases: Oracle, MongoDB, PostgreSQL\n· Tools: Docker, Git, Nginx, Figma';
+                    response = '· Languages: Python, Node.js, React, C++\n· Databases: Oracle, MongoDB, PostgreSQL\n· Tools: Docker, Git, Nginx, Figma';
                     break;
                 case 'sections -certifications':
                     setWelcomeMessage("");
@@ -164,7 +164,7 @@ $ reload: Reload website
                     break;
                 case 'sections -about':
                     setWelcomeMessage("");
-                    response = "I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance. \n\nBy the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in Data Science development.";
+                    response = "B.Sc. in Computer Engineering | M.Sc. in Data Science \n\nI am a Computer Engineer committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance.\n\nCurrently enrolled in a Master's program in Data Science to further advance my expertise.";
                     break;
                 default:
                     setWelcomeMessage("");
