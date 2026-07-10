@@ -30,12 +30,6 @@ const sections = [
         description: "Applied in data analysis, scripting, and backend development with a focus on ML workflows."
       },
       {
-        name: "Java",
-        level: "Intermediate",
-        img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-        description: "Used for structured backend systems and object-oriented design patterns."
-      },
-      {
         name: "C++",
         level: "Intermediate",
         img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
