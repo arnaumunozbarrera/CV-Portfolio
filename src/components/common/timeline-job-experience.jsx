@@ -27,9 +27,9 @@ const timelineSections = [
     title: "Studies",
     items: [
       {
-        year: "Sept 2022 - Sept 2026",
+        year: "Sept 2022 - July 2026",
         title: "Computer Engineering",
-        subtitle: "Universitat Autònoma de Barcelona",
+        subtitle: "Universitat Autònoma de Barcelona (UAB)",
         description: "",
       },
     ],
@@ -108,11 +108,11 @@ function MobileTimelineTrack({ items = [], annex, showFuture = false }) {
   const futureItems = showFuture
     ? [
         {
-          year: "Future",
-          title: "Master",
-          subtitle: "Aiming to persue a Master's Degree in Data Science or AI",
+          year: "Sept 2026 - July 2028",
+          title: "Master's in Data Science",
+          subtitle: "Universitat Polítecnica de Catalunya (UPC)",
           description:
-            "TBD",
+            "",
         },
       ]
     : [];

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
+import GitRust from "../../assets/projects/Git-Rust-Project.png";
 import MLCars from "../../assets/projects/ML-Car-Project.png";
 import MLTitanic from "../../assets/projects/ML-Titanic-Project.png";
 import MongoDB from "../../assets/projects/Massive-Data-Consult-Optimization-Project.png";
@@ -18,6 +19,16 @@ import NoneRelationalDBs from "../../assets/projects/Non-relational-Distributed-
 const sections = [
   {
     id: "entry-1",
+    label: "Git - Personal Implementation in Rust",
+    icon: Monitor,
+    items: [
+      { name: "Github repository", type: "Source code", modified: "10/07/2026 16:01", src: GitRust, href: "https://github.com/arnaumunozbarrera/Git-Implementation-Rust.git"},
+      { name: "Repository README", type: "README.md", modified: "10/07/2026 16:01", src: "", href:"https://github.com/arnaumunozbarrera/Git-Implementation-Rust/blob/885526d49fd9854a488b30fc0e92e02e41f942d9/README.md"},
+      { name: "Website", type: "Website", modified: "10/07/2026 16:01", src: "", href:"https://git-implementation-rust.vercel.app/"},
+    ],
+  },
+  {
+    id: "entry-2",
     label: "ML - Car price predictions",
     icon: Monitor,
     items: [
@@ -27,7 +38,7 @@ const sections = [
     ],
   },
   {
-    id: "entry-2",
+    id: "entry-3",
     label: "ML - Titanic survival predictions",
     icon: Monitor,
     items: [
@@ -37,7 +48,7 @@ const sections = [
     ],
   },
   {
-    id: "entry-3",
+    id: "entry-4",
     label: "DBs - Data Analysis & Optimizations",
     icon: HardDrive,
     items: [
@@ -48,7 +59,7 @@ const sections = [
     ],
   },
   {
-    id: "entry-4",
+    id: "entry-5",
     label: "DBs - Non relational architectures",
     icon: HardDrive,
     items: [
