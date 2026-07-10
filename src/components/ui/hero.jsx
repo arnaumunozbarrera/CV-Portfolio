@@ -473,11 +473,11 @@ export default function Hero(props) {
                 {showNotepad && (
                     <div className='px-[2%] left-0  w-full h-full absolute top-0 bg-white bg-opacity-20 z-[100000] flex items-center justify-center flex-row gap-0'>
                         <NotepadViewer
-                            text={`I am a Computer Engineering student committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences.
-                            
-I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance. 
+                            text={`B.Sc. in Computer Engineering | M.Sc. in Data Science
 
-By the time I complete my degree, I will be looking forward to enrolling in a Master's program to further advance my expertise in Data Science development.`}
+I am a Computer Engineer committed to improving interactions between people and technology. With skills in conflict resolution, I approach challenges collaboratively. Passionate about new technology and creating interactive visuals, I enjoy refining my creativity and transforming concepts into engaging digital experiences. I am eager to contribute Data Analytics related development with the intention of enhancing user experience & improve system performance.
+
+Currently enrolled in a Master's program in Data Science to further advance my expertise.`}
                         setShowNotepad={setShowNotepad}/>
                         
                     </div>

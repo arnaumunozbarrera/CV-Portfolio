@@ -172,10 +172,11 @@ function StudiesDesktopTrack({ items, annex }) {
   const mainItem = items?.[0];
   const topBranch = annex?.items?.[0];
   const futureItem = {
-    year: "Future",
-    title: "Master",
-    subtitle: "Aiming to persue a Master's Degree in Data Science or AI",
-    description: "TBD",
+    year: "Sept 2026 - July 2028",
+    title: "Master's in Data Science",
+    subtitle: "Universitat Polítecnica de Catalunya (UPC)",
+    description:
+      "",
   };
 
   if (!mainItem) return null;
